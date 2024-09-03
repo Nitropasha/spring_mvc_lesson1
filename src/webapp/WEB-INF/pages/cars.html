@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<table border="1">
+    <tr th:each="msg : ${cars}">
+        <td th:utext="${msg.brand}"></td>
+        <td th:utext="${msg.model}"></td>
+        <td th:utext="${msg.number}"></td>
+    </tr>
+</table>
+</body>
+</html>
