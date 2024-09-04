@@ -12,4 +12,9 @@ public class CarServiceImpl implements CarService {
         int endIndex = Math.min(count, list.size());
         return new ArrayList<>(list.subList(0, endIndex));
     }
+
+    @Override
+    public Car newCar(String brand, String model, int number) {
+        return new Car(brand, model, number);
+    }
 }
