@@ -17,17 +17,13 @@ public class CarController {
     private CarService carService;
     @GetMapping(value = "/cars")
     public String printWelcome(@RequestParam("count") int count, Model model) {
-        Car car1 = carService.newCar("Mercedes", "E", 250);
-        Car car2 = carService.newCar("Lada", "KALINA", 1);
-        Car car3 = carService.newCar("Moskvich", "Turbp", 10);
-        Car car4 = carService.newCar("BMW", "xDrive", 330);
-        Car car5 = carService.newCar("Volga", "Vedro", 2);
+
         List<Car> carList = new ArrayList<>();
-        carList.add(car1);
-        carList.add(car2);
-        carList.add(car3);
-        carList.add(car4);
-        carList.add(car5);
+        carList.add(carService.newCar("Mercedes", "E", 250));
+        carList.add(carService.newCar("Lada", "KALINA", 1));
+        carList.add(carService.newCar("Moskvich", "Turbp", 10));
+        carList.add(carService.newCar("BMW", "xDrive", 330));
+        carList.add(carService.newCar("Volga", "Vedro", 2));
         List<Car> newCars = carService.getAllCars(carList, count);
         model.addAttribute("cars", newCars);
         return "cars";
