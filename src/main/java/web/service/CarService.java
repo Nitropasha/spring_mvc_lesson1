@@ -10,4 +10,6 @@ public interface CarService
     public List<Car> getAllCars(List<Car> list, int count);
 
     public Car newCar(String brand, String model, int number);
+
+    public List<Car> createCarList();
 }
